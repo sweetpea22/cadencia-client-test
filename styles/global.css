@@ -31,5 +31,6 @@ img {
 
 .leaflet-container {
   height: 600px;
+  margin: 5rem auto 0 auto;
   width: 80%;
 }
