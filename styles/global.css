@@ -28,3 +28,8 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.leaflet-container {
+  height: 600px;
+  width: 80%;
+}
