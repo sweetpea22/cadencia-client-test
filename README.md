@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Readme coming soon!
+
+Tldr; we're making a dashboard to lower the barriers for miners :) 
