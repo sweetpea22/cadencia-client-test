@@ -39,9 +39,9 @@ const data = [
 ];
 
 const renderAreaChart = (
-  <AreaChart width={600} height={300} data={data}>
+  <AreaChart width={700} height={300} data={data}>
     <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-    <YAxis  unit="PiB" domain={['dataMin', 'dataMax']} />
+    <YAxis  domain={['dataMin', 'dataMax']} />
     <XAxis/>
     <Area type="monotone" dataKey="totalStorage" stroke="#9A00D7" fill='#CF86FA' strokeWidth={2} />
   </AreaChart>

@@ -1,6 +1,6 @@
 import { Table } from "../components/antd";
 import { useState } from "react";
-import { Menu, Dropdown } from "antd";
+import { Menu, Dropdown, Input } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import styles from "./StoragePowerTable.module.css";
 
@@ -12,6 +12,8 @@ export const StoragePowerTable = (props) => {
     selectedRowKeys,
     onChange: setSelectedRowKeys,
   };
+
+  const {Search} = Input;
 
   const menu = (
     <Menu>
@@ -134,19 +136,20 @@ export const StoragePowerTable = (props) => {
     <>
       <div className={styles.tableWrapper}>
         <div className={styles.HeadingWrapper}>
-          <h1>Storage Power in <Dropdown overlay={menu}>
-            <a
-              className="ant-dropdown-link"
-              onClick={(e) => e.preventDefault()}
-            >
-              North America <DownOutlined />
-            </a>
-          </Dropdown>
-          <h6>
-            Share of Network: <span>15%</span>
-          </h6>  
-        </h1>
-
+          <h1>Storage Power in {" "}
+            <Dropdown overlay={menu}>
+              <a
+                className="ant-dropdown-link"
+                onClick={(e) => e.preventDefault()}
+              >
+                North America <DownOutlined />
+              </a>
+            </Dropdown>
+          </h1>
+          <div className={styles.tagline}>
+            <h5>Share of Network: <span>17%</span></h5>
+            {/* <Search size="small" className={styles.search}placeholder="Search by Miner Id, Country" style={{ width: 300 }}/>  */}
+          </div>
         </div>
         <Table
           rowSelection={rowSelection}
@@ -161,9 +164,3 @@ export const StoragePowerTable = (props) => {
 };
 
 export default StoragePowerTable;
-
-// const {Search} = Input;
-{/* <Search
-        placeholder="Search for a city, country, ZIP Code"
-        style={{ width: 500 }}
-      /> */}

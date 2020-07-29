@@ -9,41 +9,41 @@ import {
 
 const data = [
   {
-    netCap: "4",
+    netCap: "200",
     date: "2020-07-02"
   },
   {
-    netCap: "7.3",
+    netCap: "300",
     date: "2020-07-03"
   },
   {
-    netCap: "6",
+    netCap: "330",
     date: "2020-07-04"
   },
   {
-    netCap: "5",
+    netCap: "337",
     date: "2020-07-05"
   },
   {
-    netCap: "2",
+    netCap: "350",
     date: "2020-07-02"
   },
   {
-    netCap: "7",
+    netCap: "375",
     date: "2020-07-03"
   },
   {
-    netCap: "1",
+    netCap: "400",
     date: "2020-07-04"
   },
   {
-    netCap: "3",
+    netCap: "410",
     date: "2020-07-05"
   },
 ];
 
 const renderLineChart = (
-  <AreaChart width={600} height={300} data={data}>
+  <AreaChart width={700} height={300} data={data}>
     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
     <YAxis />
     <XAxis />
@@ -54,7 +54,7 @@ const renderLineChart = (
 export const NetCapArea = () => {
   return (
     <>
-      <div>      
+      <div style={{marginBottom: "2rem"}}>      
         <h2>Network Capacity (PiB)</h2>
         <div>{renderLineChart}</div>
       </div>

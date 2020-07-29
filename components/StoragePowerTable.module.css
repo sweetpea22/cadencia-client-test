@@ -1,9 +1,20 @@
 .tableWrapper {
-  margin: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
 .headingWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: "space-between";
+}
+
+.tagline {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.search {
+  margin-left: 2rem;
+  margin-top: -0.5rem;
 }
