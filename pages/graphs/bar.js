@@ -6,6 +6,9 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
+  PieChart,
+  Pie,
+  Cell,
 } from "recharts";
 import Layout from "../../components/layout";
 import { Input } from "../../components/antd/index";
@@ -21,6 +24,43 @@ const data = [
   { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
   { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
 ];
+
+const COLORS = ["#ED3030", "#97B3FE", "#3047ED"];
+
+const RADIAN = Math.PI / 180;
+
+const pieData = [
+  { name: "Verified Data", value: 900 },
+  { name: "Unverified Data", value: 2300 },
+  { name: "Available storage (committed capacity)", value: 300 },
+];
+
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index,
+}) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+    >
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
 const SimpleBarChart = (
   <BarChart
     width={600}
@@ -31,11 +71,30 @@ const SimpleBarChart = (
     <CartesianGrid strokeDasharray="3 3" />
     <XAxis dataKey="name" />
     <YAxis />
-    <Tooltip />
+    <Tooltip content={data.name} />
     <Legend />
     <Bar dataKey="pv" fill="#8884d8" />
     <Bar dataKey="uv" fill="#82ca9d" />
   </BarChart>
+);
+
+const PieChartComp = (
+  <PieChart width={800} height={400}>
+    <Pie
+      data={pieData}
+      cx={500}
+      cy={500}
+      outerRadius={80}
+      fill="#8884d8"
+      label={renderCustomizedLabel}
+      labelLine={false}
+    >
+      {pieData.map((entry, index) => (
+        <Cell fill={COLORS[index % COLORS.length]} />
+      ))}
+    </Pie>
+    <Tooltip />
+  </PieChart>
 );
 
 export default function Home() {
@@ -48,6 +107,7 @@ export default function Home() {
       <main>
         <h2>Sector Size</h2>
         <div>{SimpleBarChart}</div>
+        <div>{PieChartComp}</div>
       </main>
     </Layout>
   );
