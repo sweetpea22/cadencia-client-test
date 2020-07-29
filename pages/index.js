@@ -1,17 +1,16 @@
-// import Layout from "../components/layout";
+import StoragePowerTable from "../components/StoragePowerTable";
+import StoragePowerTiles from "../components/StoragePowerTiles";
+import { DataTile } from "../components/DataTile";
 
-export default function Home() {
+export const Home = (props) => {
   return (
-    // <Layout>
-    //   <h1>
-    //     Hello, welcome to Cadencia. We exist to help Filecoin miners and users
-    //     with data find each other.
-    //   </h1>
-    // </Layout>
     <>
-      <div>
-        <h1>Hello</h1>
-      </div>
+    <div style={{display: "flex", justifyContent: "space-evenly"}}>
+      <StoragePowerTable />
+      <StoragePowerTiles/>
+    </div>
     </>
   );
-}
+};
+
+export default Home;

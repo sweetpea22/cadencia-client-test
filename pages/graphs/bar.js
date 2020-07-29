@@ -89,7 +89,7 @@ const PieChartComp = (
       label={renderCustomizedLabel}
       labelLine={false}
     >
-      {pieData.map((entry, index) => (
+      {pieData.map((i, index) => (
         <Cell fill={COLORS[index % COLORS.length]} />
       ))}
     </Pie>

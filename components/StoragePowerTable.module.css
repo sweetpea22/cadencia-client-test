@@ -1,0 +1,9 @@
+.tableWrapper {
+  margin: 3rem;
+}
+
+.headingWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: "space-between";
+}
