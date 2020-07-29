@@ -161,3 +161,9 @@ export const StoragePowerTable = (props) => {
 };
 
 export default StoragePowerTable;
+
+// const {Search} = Input;
+{/* <Search
+        placeholder="Search for a city, country, ZIP Code"
+        style={{ width: 500 }}
+      /> */}
