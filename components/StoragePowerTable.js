@@ -6,14 +6,8 @@ import styles from "./StoragePowerTable.module.css";
 
 export const StoragePowerTable = (props) => {
   const storagePowerData = props;
-  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
-  const rowSelection = {
-    selectedRowKeys,
-    onChange: setSelectedRowKeys,
-  };
-
-  const {Search} = Input;
+  const { Search } = Input;
 
   const menu = (
     <Menu>
@@ -113,7 +107,7 @@ export const StoragePowerTable = (props) => {
       dealSuccessRate: "90%",
     },
     {
-      minerId: "t03984 - hellokittty321321",
+      minerId: "t03984 - hellokitty",
       rbsc: "313.22TB",
       sectorQuality: "43%",
       dealSuccessRate: "90%",
@@ -136,7 +130,8 @@ export const StoragePowerTable = (props) => {
     <>
       <div className={styles.tableWrapper}>
         <div className={styles.HeadingWrapper}>
-          <h1>Storage Power in {" "}
+          <h1>
+            Storage Power in{" "}
             <Dropdown overlay={menu}>
               <a
                 className="ant-dropdown-link"
@@ -147,12 +142,13 @@ export const StoragePowerTable = (props) => {
             </Dropdown>
           </h1>
           <div className={styles.tagline}>
-            <h5>Share of Network: <span>17%</span></h5>
+            <h5>
+              Share of Network: <span>17%</span>
+            </h5>
             {/* <Search size="small" className={styles.search}placeholder="Search by Miner Id, Country" style={{ width: 300 }}/>  */}
           </div>
         </div>
         <Table
-          rowSelection={rowSelection}
           columns={columns}
           dataSource={tableData}
           pagination={true}

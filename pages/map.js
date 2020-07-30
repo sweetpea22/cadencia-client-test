@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Navbar from "../components/Navbar";
 
 const DynamicComponentWithNoSSR = dynamic(
   () => import("../components/MapComp"),
@@ -8,10 +9,10 @@ const DynamicComponentWithNoSSR = dynamic(
 function MapComp() {
   return (
     <>
-    <h1></h1>
-    <div>
-      <DynamicComponentWithNoSSR />
-    </div>
+      <div>
+        <Navbar />
+        <DynamicComponentWithNoSSR />
+      </div>
     </>
   );
 }
