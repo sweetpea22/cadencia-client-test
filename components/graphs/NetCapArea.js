@@ -43,7 +43,7 @@ const data = [
 ];
 
 const renderLineChart = (
-  <AreaChart width={700} height={300} data={data}>
+  <AreaChart width={700} height={250} data={data}>
     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
     <YAxis />
     <XAxis />

@@ -41,3 +41,19 @@ img {
   height: 10px;
   color: pink;
 }
+
+.main {
+  display: flex;
+  flex-flow: row-wrap;
+  margin: 2.5rem 0 0 5rem;
+}
+
+.columnWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.columnWrapper:nth-child(2) {
+  margin-left: 9rem;  
+}

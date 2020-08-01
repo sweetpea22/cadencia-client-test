@@ -9,23 +9,45 @@ import StorageDistPie from "../components/graphs/StorageDistPie";
 export const Home = (props) => {
   return (
     <>
-      <Navbar/>
-      <div style={{display: "flex", justifyContent: "space-evenly"}}>
-        <StoragePowerTable />
-        <StoragePowerTiles/>
-      </div>
-      <div style={{display: "flex", justifyContent: "space-evenly"}}>
-      <div style={{display: "flex", flexDirection: "column", marginLeft:"2rem", width: "650px"}}>
-        <NetCapArea/>
-        <TotalStoredArea/>
-      </div>
-      <div style={{display: "flex", flexDirection: "row", marginLeft:"2rem"}}>
-        <DealTiles/>
-      </div>
-      <div style={{display: "flex", flexDirection: "row", marginTop:"2rem", marginLeft: "-6.5rem"}}>
-        <StorageDistPie/>
-      </div>
-      </div>
+      <Navbar />
+      <main className="main">
+        <div className="columnWrapper">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginLeft: "2rem",
+              width: "650px",
+              marginTop: "4rem",
+            }}
+          >
+            <NetCapArea />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginTop: "1rem",
+                marginLeft: "2rem",
+              }}
+            >
+              <DealTiles />
+              <StorageDistPie />
+            </div>
+            <TotalStoredArea />
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "46%",
+            marginLeft: "9rem",
+          }}
+        >
+          <StoragePowerTable />
+          <StoragePowerTiles />
+        </div>
+      </main>
     </>
   );
 };

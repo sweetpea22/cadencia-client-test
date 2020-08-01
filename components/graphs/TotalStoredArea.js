@@ -39,7 +39,7 @@ const data = [
 ];
 
 const renderAreaChart = (
-  <AreaChart width={700} height={300} data={data}>
+  <AreaChart width={700} height={250} data={data}>
     <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
     <YAxis  domain={['dataMin', 'dataMax']} />
     <XAxis/>
