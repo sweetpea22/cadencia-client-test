@@ -5,6 +5,8 @@ import NetCapArea from "../components/graphs/NetCapArea";
 import TotalStoredArea from "../components/graphs/TotalStoredArea";
 import DealTiles from "../components/DealTiles";
 import StorageDistPie from "../components/graphs/StorageDistPie";
+import { initializeApollo } from "../lib/apolloClient";
+import { ALL_POSTS_QUERY, allPostsQueryVars } from "../components/Posts";
 
 export const Home = (props) => {
   return (
@@ -51,5 +53,21 @@ export const Home = (props) => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: ALL_POSTS_QUERY,
+    variables: allPostsQueryVars,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+    revalidate: 1,
+  };
+}
 
 export default Home;
