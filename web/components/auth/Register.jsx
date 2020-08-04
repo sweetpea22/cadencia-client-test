@@ -6,10 +6,10 @@ import InputField from "./InputField";
 import { gql, useMutation } from "@apollo/client";
 
 const REGISTER_USER = gql`
-  mutation Register($type: String!) {
-    Register(type: $type) {
+  mutation Register($data: RegisterInput!) {
+    Register(data: $data) {
       id
-      type
+      email
     }
   }
 `;
@@ -23,8 +23,16 @@ const SignupForm = () => {
       password: "",
       confirmPassword: "",
     },
-    onSubmit: async () => {
-      const response = await register();
+    onSubmit: async (data) => {
+      const response = await register({
+        variables: {
+          data: {
+            email: formik.values.email,
+            password: formik.values.password,
+            confirmPassword: formik.values.confirmPassword,
+          },
+        },
+      });
       console.log(response);
     },
   });
@@ -66,5 +74,19 @@ const SignupForm = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.mutation({
+    mutation: REGISTER_USER,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
 
 export default SignupForm;

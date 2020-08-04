@@ -10,15 +10,17 @@ import fetch from "node-fetch";
 
 let apolloClient;
 
-// const uniswap = new HttpLink({
-//   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
-//   credentials: "include",
-// });
+const uniswap = new HttpLink({
+  uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
+  credentials: "include",
+  fetch,
+});
 
-// const balancer = new HttpLink({
-//   uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
-//   credentials: "include",
-// });
+const balancer = new HttpLink({
+  uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
+  credentials: "include",
+  fetch,
+});
 
 // // Compound
 // // link: new HttpLink({
@@ -30,12 +32,16 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
 
-    link: new HttpLink({
-      uri: "http://localhost:4000/graphql",
-      fetch, // Server URL (must be absolute)
-      credentials: "include",
-      // Additional fetch() options like `credentials` or `headers`
-    }),
+    link: ApolloLink.split(
+      (operation) => operation.getContext().dataSrc === "balancer",
+      balancer,
+      uniswap
+    ),
+    // link: new HttpLink({
+    //   uri: "http://localhost:4000/graphql",
+    //   credentials: "include",
+    //   fetch,
+    // }),
     cache: new InMemoryCache({
       typePolicies: {
         Query: {

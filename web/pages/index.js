@@ -1,25 +1,37 @@
-import { gql, useQuery } from "@apollo/client";
+import UniswapList, {
+  UNISWAP_QUERY,
+  uniswapQueryVars,
+} from "../components/uniswap";
 import { initializeApollo } from "../lib/apolloClient";
+import BalancerList, {
+  BALANCER_QUERY,
+  balancerQueryVars,
+} from "../components/balancer";
 
-export const HELLO_QUERY = gql`
-  query {
-    hello
-  }
-`;
-
-export default () => {
-  const { data } = useQuery(HELLO_QUERY, {
-    notifyOnNetworkStatusChange: true,
-  });
-
-  return <h1>Query Response: {data.hello}</h1>;
-};
+const IndexPage = () => (
+  <div>
+    <h1>Total Trade Volume</h1>
+    <div style={{ display: "flex" }}>
+      <UniswapList />
+      <BalancerList />
+    </div>
+  </div>
+);
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: HELLO_QUERY,
+    query: UNISWAP_QUERY,
+    variables: uniswapQueryVars,
+  });
+
+  await apolloClient.query({
+    query: BALANCER_QUERY,
+    variables: balancerQueryVars,
+    context: {
+      dataSrc: "balancer",
+    },
   });
 
   return {
@@ -28,3 +40,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default IndexPage;
