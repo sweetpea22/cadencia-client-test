@@ -27,8 +27,8 @@ const main = async () => {
 
   app.use(
     cors({
+      origin: "http://localhost:3000/",
       credentials: true,
-      origin: "http://localhost:3000",
     })
   );
 
@@ -49,7 +49,7 @@ const main = async () => {
     })
   );
 
-  apolloServer.applyMiddleware({ app, cors: false });
+  apolloServer.applyMiddleware({ app });
 
   app.listen(4000, () => {
     console.log("server started on http://localhost:4000/graphql");

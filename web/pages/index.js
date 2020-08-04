@@ -1,55 +1,30 @@
-import Navbar from "../components/filecoinDashboard/Navbar";
-import StoragePowerTable from "../components/filecoinDashboard/StoragePowerTable";
-import StoragePowerTiles from "../components/filecoinDashboard/StoragePowerTiles";
-import NetCapArea from "../components/filecoinDashboard/graphs/NetCapArea";
-import TotalStoredArea from "../components/filecoinDashboard/graphs/TotalStoredArea";
-import DealTiles from "../components/filecoinDashboard/DealTiles";
-import StorageDistPie from "../components/filecoinDashboard/graphs/StorageDistPie";
+import { gql, useQuery } from "@apollo/client";
+import { initializeApollo } from "../lib/apolloClient";
 
-export const Home = (props) => {
-  return (
-    <>
-      <Navbar />
-      <main className="main">
-        <div className="columnWrapper">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              marginLeft: "2rem",
-              width: "650px",
-              marginTop: "4rem",
-            }}
-          >
-            <NetCapArea />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                marginTop: "1rem",
-                marginLeft: "2rem",
-              }}
-            >
-              <DealTiles />
-              <StorageDistPie />
-            </div>
-            <TotalStoredArea />
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "46%",
-            marginLeft: "9rem",
-          }}
-        >
-          <StoragePowerTable />
-          <StoragePowerTiles />
-        </div>
-      </main>
-    </>
-  );
+export const HELLO_QUERY = gql`
+  query {
+    hello
+  }
+`;
+
+export default () => {
+  const { data } = useQuery(HELLO_QUERY, {
+    notifyOnNetworkStatusChange: true,
+  });
+
+  return <h1>Query Response: {data.hello}</h1>;
 };
 
-export default Home;
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: HELLO_QUERY,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
