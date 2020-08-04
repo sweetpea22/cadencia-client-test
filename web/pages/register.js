@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
 const DynamicComponentWithNoSSR = dynamic(
-  () => import("../web/components/auth/Register"),
+  () => import("../components/auth/Register"),
   { ssr: false }
 );
 

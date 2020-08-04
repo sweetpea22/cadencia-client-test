@@ -6,6 +6,7 @@ import {
   ApolloLink,
 } from "@apollo/client";
 import { concatPagination } from "@apollo/client/utilities";
+import fetch from "node-fetch";
 
 let apolloClient;
 
@@ -30,8 +31,10 @@ function createApolloClient() {
     ssrMode: typeof window === "undefined",
 
     link: new HttpLink({
-      uri: "http://localhost:4000/graphql", // Server URL (must be absolute)
-      credentials: "include", // Additional fetch() options like `credentials` or `headers`
+      uri: "http://localhost:4000/graphql",
+      fetch, // Server URL (must be absolute)
+      credentials: "include",
+      // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({
       typePolicies: {

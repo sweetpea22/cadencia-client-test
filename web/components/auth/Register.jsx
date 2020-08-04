@@ -3,21 +3,32 @@ import { useFormik } from "formik";
 import styles from "./auth.module.css";
 import InputField from "./InputField";
 
+import { gql, useMutation } from "@apollo/client";
+
+const REGISTER_USER = gql`
+  mutation Register($type: String!) {
+    Register(type: $type) {
+      id
+      type
+    }
+  }
+`;
+
 const SignupForm = () => {
-  // Notice that we have to initialize ALL of fields with values. These
-  // could come from props, but since we don't want to prefill this form,
-  // we just use an empty string. If you don't do this, React will yell
-  // at you.
+  const [register, { data }] = useMutation(REGISTER_USER);
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
       confirmPassword: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async () => {
+      const response = await register();
+      console.log(response);
     },
   });
+
   return (
     <>
       <div className={styles.pageWrapper}>
