@@ -1,8 +1,16 @@
 import { gql, useQuery, NetworkStatus } from "@apollo/client";
+import {
+  AreaChart,
+  Area,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
 
 export const BALANCER_QUERY = gql`
   query {
-    pools(orderBy: tokensCount, orderDirection: desc) {
+    pools {
       tokensCount
       totalSwapVolume
     }
@@ -41,18 +49,26 @@ export default function BalancerList() {
 
   const { pools } = data;
 
+  const renderAreaChart = (
+    <AreaChart width={850} height={600} data={pools}>
+      <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
+      <YAxis domain={["10000000", "dataMax"]} dataKey="tokensCount" />
+      <XAxis domain={["dataMin", "dataMax"]} />
+      <Area
+        type="monotone"
+        dataKey="tokensCount"
+        stroke="#9A00D7"
+        fill="#CF86FA"
+        strokeWidth={2}
+      />
+      <Tooltip />
+    </AreaChart>
+  );
+
   return (
     <section>
       <h1>Top Balancer Pools</h1>
-
-      <ul>
-        {pools.map((pool, index) => (
-          <li key={index}>
-            {index}: Token Count: {pool.tokensCount} Total Swap Volume:{" "}
-            {pool.totalSwapVolume}
-          </li>
-        ))}
-      </ul>
+      <div>{renderAreaChart}</div>
     </section>
   );
 }
