@@ -1,12 +1,10 @@
-import Navbar from "../components/Navbar";
-import StoragePowerTable from "../components/StoragePowerTable";
-import StoragePowerTiles from "../components/StoragePowerTiles";
-import NetCapArea from "../components/graphs/NetCapArea";
-import TotalStoredArea from "../components/graphs/TotalStoredArea";
-import DealTiles from "../components/DealTiles";
-import StorageDistPie from "../components/graphs/StorageDistPie";
-import { initializeApollo } from "../lib/apolloClient";
-import { ALL_POSTS_QUERY, allPostsQueryVars } from "../components/Posts";
+import Navbar from "../components/filecoinDashboard/Navbar";
+import StoragePowerTable from "../components/filecoinDashboard/StoragePowerTable";
+import StoragePowerTiles from "../components/filecoinDashboard/StoragePowerTiles";
+import NetCapArea from "../components/filecoinDashboard/graphs/NetCapArea";
+import TotalStoredArea from "../components/filecoinDashboard/graphs/TotalStoredArea";
+import DealTiles from "../components/filecoinDashboard/DealTiles";
+import StorageDistPie from "../components/filecoinDashboard/graphs/StorageDistPie";
 
 export const Home = (props) => {
   return (
@@ -53,21 +51,5 @@ export const Home = (props) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: ALL_POSTS_QUERY,
-    variables: allPostsQueryVars,
-  });
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-    revalidate: 1,
-  };
-}
 
 export default Home;

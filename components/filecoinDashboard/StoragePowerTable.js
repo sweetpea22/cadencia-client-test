@@ -1,6 +1,5 @@
-import { Table } from "../components/antd";
-import { useState } from "react";
-import { Menu, Dropdown, Input } from "antd";
+import { Table } from "../antd";
+import { Menu, Dropdown, Input } from "../antd";
 import { DownOutlined } from "@ant-design/icons";
 import styles from "./StoragePowerTable.module.css";
 
