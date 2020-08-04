@@ -1,52 +1,59 @@
-import { Formik } from "formik";
+import { Formik, Field } from "formik";
+import { Button } from "../antd";
+import InputField from "./InputField";
 import * as Yup from "yup";
-
+import styles from "./auth.module.css";
 export const LoginForm = (props) => {
   const {
-    values,
-    touched,
+    value = "",
     errors,
     isSubmitting,
     handleChange,
-    handleBlur,
     handleSubmit,
   } = props;
-  return (
-    <Formik
-      initialValues={{ email: "" }}
-      onSubmit={async (values) => {
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        alert(JSON.stringify(values, null, 2));
-      }}
-      validationSchema={Yup.object().shape({
-        email: Yup.string().email().required("Required"),
-      })}
-    >
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email" style={{ display: "block" }}>
-          Email
-        </label>
-        <input
-          id="email"
-          placeholder="Enter your email"
-          type="text"
-          value={values.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          className={
-            errors.email && touched.email ? "text-input error" : "text-input"
-          }
-        />
-        {errors.email && touched.email && (
-          <div className="input-feedback">{errors.email}</div>
-        )}
 
-        <button type="submit" disabled={isSubmitting}>
-          Login
-        </button>
-      </form>
-      <LoginInputs />
-    </Formik>
+  return (
+    <>
+      <div className={styles.pageWrapper}>
+        <h1 className={styles.formPageHeader}>Welcome back!</h1>
+        <Formik
+          initialValues={{ email: "" }}
+          onSubmit={async (value) => {
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            alert(JSON.stringify(value, null, 2));
+          }}
+          validationSchema={Yup.object().shape({
+            email: Yup.string().email().required("Required"),
+          })}
+        >
+          <form onSubmit={handleSubmit} className={styles.formWrapper}>
+            <label htmlFor="email" style={{ display: "block" }}>
+              Email
+            </label>
+            <Field component={InputField} name="email" />
+            {/* {errors.email && touched.email && (
+          <div className="input-feedback">{errors.email}</div>
+        )} */}
+
+            <label htmlFor="password" style={{ display: "block" }}>
+              Password
+            </label>
+            <Field component={InputField} name="password" type="password" />
+            {/* {errors.password && touched.password && (
+          <div className="input-feedback">{errors.password}</div>
+        )} */}
+
+            <Button
+              className={styles.submitButton}
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Login
+            </Button>
+          </form>
+        </Formik>
+      </div>
+    </>
   );
 };
 
