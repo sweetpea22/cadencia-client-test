@@ -1,5 +1,5 @@
 import { Avatar, Button } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, DownOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
@@ -12,11 +12,15 @@ export const Navbar = ({ onFilecoinPage }) => {
     <>
       <nav className={styles.navWrapper}>
         <div className={styles.linkWrapper}>
-          <h4 className={styles.title}>Cadencia</h4>
           <Link href="/compare">
-            <a>Compare Data</a>
+            <a>Browse Datasets</a>
           </Link>
           <span className={styles.divider}></span>
+          <Link href="/filecoin-dashboard">
+            <a>Search on Filecoin</a>
+          </Link>
+          <span className={styles.divider}></span>
+
           <Link href="/filecoin-dashboard">
             <a>Filecoin Data Network Stats</a>
           </Link>
@@ -27,20 +31,26 @@ export const Navbar = ({ onFilecoinPage }) => {
             size="large"
             icon={<UserOutlined />}
           />
+          <DownOutlined
+            style={{
+              marginTop: ".7rem",
+              marginLeft: ".3rem",
+              color: "darkgray",
+            }}
+          />
           {onFilecoinPage ? (
-            <>
+            <div className={styles.fcButtonWrapper}>
               <Button disabled={onMapPage ? false : true} key="3">
                 <Link href="/">
                   <a>Network Stats</a>
                 </Link>
               </Button>
-              ,
               <Button disabled={onMapPage} key="2">
                 <Link href="/map">
                   <a>Map View</a>
                 </Link>
               </Button>
-            </>
+            </div>
           ) : null}
         </div>
       </nav>

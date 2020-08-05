@@ -6,7 +6,7 @@ import {
   Marker,
   Tooltip,
 } from "react-leaflet";
-import { peers } from "../lib/peers";
+import { peers } from "../../lib/peers";
 
 export default function MapComp(props) {
   const iconStyle = L.divIcon({ className: "mapIcon" });

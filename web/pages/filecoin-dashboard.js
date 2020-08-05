@@ -1,4 +1,4 @@
-import Navbar from "../components/filecoinDashboard/Navbar";
+import Navbar from "../components/partials/Navbar";
 import StoragePowerTable from "../components/filecoinDashboard/StoragePowerTable";
 import StoragePowerTiles from "../components/filecoinDashboard/StoragePowerTiles";
 import NetCapArea from "../components/filecoinDashboard/graphs/NetCapArea";

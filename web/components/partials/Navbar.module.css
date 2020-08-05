@@ -6,7 +6,7 @@
 }
 
 .divider {
-  width: 12rem;
+  width: 7rem;
 }
 
 .avatar {
@@ -14,4 +14,12 @@
 }
 .title {
   padding-right: 12rem;
+}
+.fcButtonWrapper {
+  padding-left: 2rem;
+}
+
+.brand {
+  max-width: 250px;
+  height: 120px;
 }

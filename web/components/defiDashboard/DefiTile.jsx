@@ -1,9 +1,14 @@
-import { Card } from "antd";
+import { Card, Button, Badge } from "antd";
 import styles from "./defiTile.module.css";
 
 export const DefiTile = ({ imgSrc }) => {
   return (
-    <Card className={styles.defiTile}>
+    
+    <Card
+      hoverable
+      actions={[<Button>Add to Data Bundle</Button>]}
+      className={styles.defiTile}
+    >
       <img src={imgSrc}></img>
     </Card>
   );

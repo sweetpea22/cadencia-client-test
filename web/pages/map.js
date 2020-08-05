@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/partials/Navbar";
 
 const DynamicComponentWithNoSSR = dynamic(
-  () => import("../components/MapComp"),
+  () => import("../components/filecoinDashboard/MapComp"),
   { ssr: false }
 );
 
