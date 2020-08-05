@@ -1,0 +1,9 @@
+.container {
+  max-width: 59rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+}
+
+.heading {
+  font-family: "Arial";
+}

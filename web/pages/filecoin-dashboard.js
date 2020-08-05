@@ -9,7 +9,7 @@ import StorageDistPie from "../components/filecoinDashboard/graphs/StorageDistPi
 export const Dashboard = (props) => {
   return (
     <>
-      <Navbar />
+      <Navbar onFilecoinPage />
       <main className="main">
         <div className="columnWrapper">
           <div

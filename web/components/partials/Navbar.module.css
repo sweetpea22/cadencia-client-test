@@ -1,0 +1,17 @@
+.linkWrapper {
+  display: flex;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  height: 4rem;
+}
+
+.divider {
+  width: 12rem;
+}
+
+.avatar {
+  margin-left: 25rem;
+}
+.title {
+  padding-right: 12rem;
+}
