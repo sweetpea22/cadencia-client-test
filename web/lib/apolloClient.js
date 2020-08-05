@@ -16,8 +16,8 @@ const uniswap = new HttpLink({
   fetch,
 });
 
-const balancer = new HttpLink({
-  uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
+const kyber = new HttpLink({
+  uri: "https://api.thegraph.com/subgraphs/name/protofire/kyber",
   credentials: "include",
   fetch,
 });
@@ -33,8 +33,8 @@ function createApolloClient() {
     ssrMode: typeof window === "undefined",
 
     link: ApolloLink.split(
-      (operation) => operation.getContext().dataSrc === "balancer",
-      balancer,
+      (operation) => operation.getContext().dataSrc === "kyber",
+      kyber,
       uniswap
     ),
     // link: new HttpLink({
@@ -74,3 +74,14 @@ export function useApollo(initialState) {
   const store = useMemo(() => initializeApollo(initialState), [initialState]);
   return store;
 }
+
+// {
+//   totalTradeVolumes (orderBy:actualTotalVolume, orderDirection:desc, first:10){
+//     token {
+//       name
+//       totalTradeVolume {
+//         actualTotalVolume
+//       }
+//     }
+//   }
+//   }

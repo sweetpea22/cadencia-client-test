@@ -122,8 +122,8 @@ const uniswap = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
   credentials: "include",
   fetch: (node_fetch__WEBPACK_IMPORTED_MODULE_3___default())
 });
-const balancer = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
-  uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
+const kyber = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
+  uri: "https://api.thegraph.com/subgraphs/name/protofire/kyber",
   credentials: "include",
   fetch: (node_fetch__WEBPACK_IMPORTED_MODULE_3___default())
 }); // // Compound
@@ -135,7 +135,7 @@ const balancer = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
 function createApolloClient() {
   return new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloClient"]({
     ssrMode: true,
-    link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(operation => operation.getContext().dataSrc === "balancer", balancer, uniswap),
+    link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(operation => operation.getContext().dataSrc === "kyber", kyber, uniswap),
     // link: new HttpLink({
     //   uri: "http://localhost:4000/graphql",
     //   credentials: "include",
@@ -173,7 +173,16 @@ function initializeApollo(initialState = null) {
 function useApollo(initialState) {
   const store = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => initializeApollo(initialState), [initialState]);
   return store;
-}
+} // {
+//   totalTradeVolumes (orderBy:actualTotalVolume, orderDirection:desc, first:10){
+//     token {
+//       name
+//       totalTradeVolume {
+//         actualTotalVolume
+//       }
+//     }
+//   }
+//   }
 
 /***/ }),
 

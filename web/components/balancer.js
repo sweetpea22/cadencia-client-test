@@ -10,9 +10,8 @@ import {
 
 export const BALANCER_QUERY = gql`
   query {
-    pools {
-      tokensCount
-      totalSwapVolume
+    tokens {
+      name
     }
   }
 `;
@@ -30,7 +29,7 @@ export default function BalancerList() {
       // the "networkStatus" changes, so we are able to know if it is fetching
       // more data
       notifyOnNetworkStatusChange: true,
-      context: { dataSrc: "balancer" },
+      context: { dataSrc: "kyber" },
     }
   );
 
@@ -47,28 +46,37 @@ export default function BalancerList() {
   if (error) return <p> Error</p>;
   if (loading && !loadingMorePosts) return <div>Loading</div>;
 
-  const { pools } = data;
+  const { tokens } = data;
 
-  const renderAreaChart = (
-    <AreaChart width={850} height={600} data={pools}>
-      <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-      <YAxis domain={["10000000", "dataMax"]} dataKey="tokensCount" />
-      <XAxis domain={["dataMin", "dataMax"]} />
-      <Area
-        type="monotone"
-        dataKey="tokensCount"
-        stroke="#9A00D7"
-        fill="#CF86FA"
-        strokeWidth={2}
-      />
-      <Tooltip />
-    </AreaChart>
-  );
+  // const renderAreaChart = (
+  //   <AreaChart width={850} height={600} data={tokens}>
+  //     <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
+  //     <YAxis domain={["10000000", "dataMax"]} dataKey="tokensCount" />
+  //     <XAxis domain={["dataMin", "dataMax"]} />
+  //     <Area
+  //       type="monotone"
+  //       dataKey="tokensCount"
+  //       stroke="#9A00D7"
+  //       fill="#CF86FA"
+  //       strokeWidth={2}
+  //     />
+  //     <Tooltip />
+  //   </AreaChart>
+  // );
 
   return (
     <section>
-      <h1>Top Balancer Pools</h1>
-      <div>{renderAreaChart}</div>
+      <h1>Kyber tokens</h1>
+      <ol>
+        {tokens.map((token, index) => (
+          <li key={index}> {token.name}</li>
+        ))}
+      </ol>
     </section>
   );
 }
+
+// <li key={index}>
+//   Token Name: <strong>{token.name}</strong> Total Trade Volume:{" "}
+//   {token.totalTradeVolume}
+// </li>;

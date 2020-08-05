@@ -27,8 +27,8 @@ var uniswap = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
   credentials: "include",
   fetch: node_fetch__WEBPACK_IMPORTED_MODULE_3___default.a
 });
-var balancer = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
-  uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
+var kyber = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
+  uri: "https://api.thegraph.com/subgraphs/name/protofire/kyber",
   credentials: "include",
   fetch: node_fetch__WEBPACK_IMPORTED_MODULE_3___default.a
 }); // // Compound
@@ -41,8 +41,8 @@ function createApolloClient() {
   return new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloClient"]({
     ssrMode: false,
     link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(function (operation) {
-      return operation.getContext().dataSrc === "balancer";
-    }, balancer, uniswap),
+      return operation.getContext().dataSrc === "kyber";
+    }, kyber, uniswap),
     // link: new HttpLink({
     //   uri: "http://localhost:4000/graphql",
     //   credentials: "include",
@@ -84,7 +84,16 @@ function useApollo(initialState) {
     return initializeApollo(initialState);
   }, [initialState]);
   return store;
-}
+} // {
+//   totalTradeVolumes (orderBy:actualTotalVolume, orderDirection:desc, first:10){
+//     token {
+//       name
+//       totalTradeVolume {
+//         actualTotalVolume
+//       }
+//     }
+//   }
+//   }
 
 /***/ }),
 
@@ -8356,7 +8365,7 @@ var ___CSS_LOADER_AT_RULE_IMPORT_1___ = __webpack_require__(/*! -!../node_module
 exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
 exports.i(___CSS_LOADER_AT_RULE_IMPORT_1___);
 // Module
-exports.push([module.i, "html,\nbody {\n  padding: 0;\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,\n    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;\n  line-height: 1.6;\n  font-size: 18px;\n  overflow-x: hidden;\n}\n\n* {\n  box-sizing: border-box;\n}\n\na {\n  color: #0070f3;\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration: underline;\n}\n\nimg {\n  max-width: 100%;\n  display: block;\n}\n\n.leaflet-container {\n  height: 600px;\n  margin: 5rem auto 0 auto;\n  width: 80%;\n}\n\n.mapIcon {\n  width: 10px;\n  height: 10px;\n  color: pink;\n}\n\n.main {\n  display: flex;\n  flex-flow: row-wrap;\n  margin: 2.5rem 0 0 5rem;\n}\n\n.columnWrapper {\n  display: flex;\n  flex-direction: column;\n  width: 40%;\n}\n\n.columnWrapper:nth-child(2) {\n  margin-left: 9rem;  \n}", "",{"version":3,"sources":["/Users/studiopreza/Desktop/cadencia/cadencia/web/styles/global.css"],"names":[],"mappings":"AAGA;;EAEE,UAAU;EACV,SAAS;EACT;wEACsE;EACtE,gBAAgB;EAChB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,cAAc;EACd,qBAAqB;AACvB;;AAEA;EACE,0BAA0B;AAC5B;;AAEA;EACE,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,wBAAwB;EACxB,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,WAAW;AACb;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,UAAU;AACZ;;AAEA;EACE,iBAAiB;AACnB","file":"global.css","sourcesContent":["@import \"~antd/dist/antd.css\";\n@import \"~leaflet/dist/leaflet.css\";\n\nhtml,\nbody {\n  padding: 0;\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,\n    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;\n  line-height: 1.6;\n  font-size: 18px;\n  overflow-x: hidden;\n}\n\n* {\n  box-sizing: border-box;\n}\n\na {\n  color: #0070f3;\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration: underline;\n}\n\nimg {\n  max-width: 100%;\n  display: block;\n}\n\n.leaflet-container {\n  height: 600px;\n  margin: 5rem auto 0 auto;\n  width: 80%;\n}\n\n.mapIcon {\n  width: 10px;\n  height: 10px;\n  color: pink;\n}\n\n.main {\n  display: flex;\n  flex-flow: row-wrap;\n  margin: 2.5rem 0 0 5rem;\n}\n\n.columnWrapper {\n  display: flex;\n  flex-direction: column;\n  width: 40%;\n}\n\n.columnWrapper:nth-child(2) {\n  margin-left: 9rem;  \n}"]}]);
+exports.push([module.i, "html,\nbody {\n  padding: 0;\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,\n    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;\n  line-height: 1.6;\n  font-size: 18px;\n  overflow-x: hidden;\n}\n\n* {\n  box-sizing: border-box;\n}\n\na {\n  color: #0070f3;\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration: underline;\n}\n\nimg {\n  max-width: 100%;\n  display: block;\n}\n\n.leaflet-container {\n  height: 600px;\n  margin: 5rem auto 0 auto;\n  width: 80%;\n}\n\n.mapIcon {\n  width: 10px;\n  height: 10px;\n  color: pink;\n}\n\n.main {\n  display: flex;\n  flex-flow: row-wrap;\n  margin: 2.5rem 0 0 5rem;\n}\n\n.columnWrapper {\n  display: flex;\n  flex-direction: column;\n  width: 40%;\n}\n\n.columnWrapper:nth-child(2) {\n  margin-left: 9rem;\n}\n", "",{"version":3,"sources":["/Users/studiopreza/Desktop/cadencia/cadencia/web/styles/global.css"],"names":[],"mappings":"AAGA;;EAEE,UAAU;EACV,SAAS;EACT;wEACsE;EACtE,gBAAgB;EAChB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,cAAc;EACd,qBAAqB;AACvB;;AAEA;EACE,0BAA0B;AAC5B;;AAEA;EACE,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,wBAAwB;EACxB,UAAU;AACZ;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,WAAW;AACb;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,UAAU;AACZ;;AAEA;EACE,iBAAiB;AACnB","file":"global.css","sourcesContent":["@import \"~antd/dist/antd.css\";\n@import \"~leaflet/dist/leaflet.css\";\n\nhtml,\nbody {\n  padding: 0;\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,\n    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;\n  line-height: 1.6;\n  font-size: 18px;\n  overflow-x: hidden;\n}\n\n* {\n  box-sizing: border-box;\n}\n\na {\n  color: #0070f3;\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration: underline;\n}\n\nimg {\n  max-width: 100%;\n  display: block;\n}\n\n.leaflet-container {\n  height: 600px;\n  margin: 5rem auto 0 auto;\n  width: 80%;\n}\n\n.mapIcon {\n  width: 10px;\n  height: 10px;\n  color: pink;\n}\n\n.main {\n  display: flex;\n  flex-flow: row-wrap;\n  margin: 2.5rem 0 0 5rem;\n}\n\n.columnWrapper {\n  display: flex;\n  flex-direction: column;\n  width: 40%;\n}\n\n.columnWrapper:nth-child(2) {\n  margin-left: 9rem;\n}\n"]}]);
 
 
 /***/ }),

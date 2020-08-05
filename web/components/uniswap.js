@@ -2,7 +2,14 @@ import { gql, useQuery, NetworkStatus } from "@apollo/client";
 
 export const UNISWAP_QUERY = gql`
   query {
-    tokens(orderBy: txCount, orderDirection: desc) {
+    tokens(
+      orderBy: name
+      orderDirection: asc
+      first: 1000
+      where: { txCount_gt: 3000 }
+    ) {
+      id
+      symbol
       name
       tradeVolume
     }
@@ -44,14 +51,14 @@ export default function UniswapList() {
   return (
     <section>
       <h1>Top Traded Uniswap Tokens</h1>
-      <ul>
+      <ol>
         {tokens.map((token, index) => (
           <li key={index}>
             Token Name: <strong>{token.name}</strong> Total Trade Volume:{" "}
             {token.tradeVolume}
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
   );
 }
