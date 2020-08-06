@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -154,18 +154,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const DefiTile = ({
   imgSrc,
-  handleClick
+  handleClick,
+  disabled
 }) => {
   const [isCardSelected, setCardSelected] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(false);
   return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
     hoverable: true,
     actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      disabled: disabled,
       onClick: handleClick,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10,
-        columnNumber: 17
+        lineNumber: 11,
+        columnNumber: 9
       }
     }, "Add to Data Bundle")],
     className: _defiTile_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.defiTile,
@@ -183,10 +185,21 @@ const DefiTile = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 18,
       columnNumber: 7
     }
-  }));
+  }), disabled ? __jsx("p", {
+    style: {
+      textAlign: "center",
+      color: "darkgray"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 9
+    }
+  }, "Coming soon!") : null);
 };
 /* harmony default export */ __webpack_exports__["default"] = (DefiTile);
 
@@ -436,13 +449,14 @@ const Navbar = ({
       columnNumber: 11
     }
   }, __jsx("a", {
+    disabled: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24,
       columnNumber: 13
     }
-  }, "Search on Filecoin")), __jsx("span", {
+  }, "Search on Filecoin - Soon!")), __jsx("span", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.divider,
     __self: undefined,
     __source: {
@@ -465,7 +479,7 @@ const Navbar = ({
       lineNumber: 29,
       columnNumber: 13
     }
-  }, "Filecoin Data Network Stats")), __jsx("span", {
+  }, "Filecoin Data Network Stats - Alpha")), __jsx("span", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.divider,
     __self: undefined,
     __source: {
@@ -2679,6 +2693,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 11
     }
   }), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    disabled: true,
     imgSrc: "https://whatever12-team-bucket.storage.fleek.co/futureswap.svg",
     __self: undefined,
     __source: {
@@ -2695,15 +2710,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 56,
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    disabled: true,
     imgSrc: "https://whatever12-team-bucket.storage.fleek.co/aave.jpg",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 61,
       columnNumber: 13
     }
   }))), __jsx(_components_defiDashboard_Heading__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2711,7 +2727,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 67,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -2722,7 +2738,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 68,
       columnNumber: 9
     }
   }, __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
@@ -2734,41 +2750,45 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 69,
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
     imgSrc: "https://whatever12-team-bucket.storage.fleek.co/kyber.png",
     name: "kyber",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68,
-      columnNumber: 13
-    }
-  })), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/curve.png",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 11
-    }
-  }), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/bancor.png",
+    disabled: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 74,
+      columnNumber: 13
+    }
+  })), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    disabled: true,
+    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/curve.png",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80,
+      columnNumber: 11
+    }
+  }), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    disabled: true,
+    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/bancor.png",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
       columnNumber: 11
     }
   }), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
     imgSrc: "https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png",
     handleClick: () => addToBundle("balancer"),
+    disabled: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 88,
       columnNumber: 11
     }
   })), __jsx(_components_defiDashboard_Heading__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2776,7 +2796,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 94,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -2787,50 +2807,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 95,
       columnNumber: 9
     }
   }, __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
-    text: "Verified",
-    color: "geekblue",
-    style: {
-      marginRight: ".8rem"
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 11
-    }
-  }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/1024px-Seal_of_the_United_States_Federal_Reserve_System.svg.png",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 13
-    }
-  })), __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
-    text: "Verified",
-    color: "geekblue",
-    style: {
-      marginRight: ".8rem"
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89,
-      columnNumber: 11
-    }
-  }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/etherscan-logo-circle.png",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 94,
-      columnNumber: 13
-    }
-  })), __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
     text: "Verified",
     color: "geekblue",
     style: {
@@ -2843,7 +2823,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png",
+    disabled: true,
+    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/1024px-Seal_of_the_United_States_Federal_Reserve_System.svg.png",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -2859,15 +2840,58 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 106,
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    disabled: true,
+    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/etherscan-logo-circle.png",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111,
+      columnNumber: 13
+    }
+  })), __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
+    text: "Verified",
+    color: "geekblue",
+    style: {
+      marginRight: ".8rem"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116,
+      columnNumber: 11
+    }
+  }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    disabled: true,
+    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121,
+      columnNumber: 13
+    }
+  })), __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
+    text: "Verified",
+    color: "geekblue",
+    style: {
+      marginRight: ".8rem"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 11
+    }
+  }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    disabled: true,
     imgSrc: "https://whatever12-team-bucket.storage.fleek.co/Screen%20Shot%202020-08-04%20at%209.47.43%20PM.png",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 132,
       columnNumber: 13
     }
   })))));
@@ -2875,7 +2899,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/compare.js ***!
   \********************************/

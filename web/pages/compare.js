@@ -49,13 +49,19 @@ export default () => {
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
             handleClick={() => addToBundle("balancer")}
           />
-          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg" />
+          <DefiTile
+            disabled
+            imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg"
+          />
           <Badge.Ribbon
             text="Verified"
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/aave.jpg" />
+            <DefiTile
+              disabled
+              imgSrc="https://whatever12-team-bucket.storage.fleek.co/aave.jpg"
+            />
           </Badge.Ribbon>
         </div>
         <Heading title="Most Active Liquidity Pools" />
@@ -68,13 +74,21 @@ export default () => {
             <DefiTile
               imgSrc="https://whatever12-team-bucket.storage.fleek.co/kyber.png"
               name="kyber"
+              disabled
             />
           </Badge.Ribbon>
-          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/curve.png" />
-          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/bancor.png" />
+          <DefiTile
+            disabled
+            imgSrc="https://whatever12-team-bucket.storage.fleek.co/curve.png"
+          />
+          <DefiTile
+            disabled
+            imgSrc="https://whatever12-team-bucket.storage.fleek.co/bancor.png"
+          />
           <DefiTile
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
             handleClick={() => addToBundle("balancer")}
+            disabled
           />
         </div>
         <Heading title="Current Liquidity Volume" />
@@ -84,21 +98,30 @@ export default () => {
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/1024px-Seal_of_the_United_States_Federal_Reserve_System.svg.png" />
+            <DefiTile
+              disabled
+              imgSrc="https://whatever12-team-bucket.storage.fleek.co/1024px-Seal_of_the_United_States_Federal_Reserve_System.svg.png"
+            />
           </Badge.Ribbon>
           <Badge.Ribbon
             text="Verified"
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/etherscan-logo-circle.png" />
+            <DefiTile
+              disabled
+              imgSrc="https://whatever12-team-bucket.storage.fleek.co/etherscan-logo-circle.png"
+            />
           </Badge.Ribbon>
           <Badge.Ribbon
             text="Verified"
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png" />
+            <DefiTile
+              disabled
+              imgSrc="https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png"
+            />
           </Badge.Ribbon>
 
           <Badge.Ribbon
@@ -106,7 +129,10 @@ export default () => {
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/Screen%20Shot%202020-08-04%20at%209.47.43%20PM.png" />
+            <DefiTile
+              disabled
+              imgSrc="https://whatever12-team-bucket.storage.fleek.co/Screen%20Shot%202020-08-04%20at%209.47.43%20PM.png"
+            />
           </Badge.Ribbon>
         </div>
       </Layout>

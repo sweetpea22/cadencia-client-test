@@ -21,12 +21,12 @@ export const Navbar = ({ onFilecoinPage }) => {
           </Link>
           <span className={styles.divider}></span>
           <Link href="/filecoin-dashboard">
-            <a>Search on Filecoin</a>
+            <a disabled>Search on Filecoin - Soon!</a>
           </Link>
           <span className={styles.divider}></span>
 
           <Link href="/filecoin-dashboard">
-            <a>Filecoin Data Network Stats</a>
+            <a>Filecoin Data Network Stats - Alpha</a>
           </Link>
           <span className={styles.divider}></span>
 

@@ -50,14 +50,23 @@ export default function UniswapList() {
   return (
     <>
       <div style={{ marginTop: "2rem", marginLeft: "5rem" }}>
-        <h1 style={{ marginTop: "1rem" }}>Most Swapped Tokens on Uniswap (TxCount)</h1>
+        <h1 style={{ marginTop: "1rem" }}>
+          Most Swapped Tokens on Uniswap (TxCount)
+        </h1>
+        <p
+          style={{ color: "darkgray", fontSize: "11.2px", marginTop: "-1rem" }}
+        >
+          Pulled from:{" "}
+          <a>https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2 </a>
+          <em>a few seconds ago</em>
+        </p>
         <BarChart
           instanceId="uniswapChart"
           width={900}
           height={600}
           data={tokens}
           margin={{
-            top: 5,
+            top: 10,
             right: 30,
             left: 50,
             bottom: 50,

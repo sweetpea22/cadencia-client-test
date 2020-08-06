@@ -32,15 +32,15 @@ export default function BalancerList() {
     }
   );
 
-  // const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
+  const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
 
-  // const loadMorePosts = () => {
-  //   fetchMore({
-  //     variables: {
-  //       skip: pools.length,
-  //     },
-  //   });
-  // };
+  const loadMorePosts = () => {
+    fetchMore({
+      variables: {
+        skip: pools.length,
+      },
+    });
+  };
 
   if (error) return <p> Error</p>;
   if (loading && !loadingMorePosts) return <div>Loading</div>;
@@ -90,6 +90,11 @@ export default function BalancerList() {
   return (
     <div style={{ marginTop: "2.9rem", marginLeft: "4.5rem" }}>
       <h1>What the biggest Balancer Pools are holding</h1>
+      <p style={{ color: "darkgray", fontSize: "11.2px", marginTop: "-1rem" }}>
+        Pulled from:{" "}
+        <a>https://thegraph.com/explorer/subgraph/balancer-labs/balancer </a>
+        <em>a few seconds ago</em>
+      </p>
 
       <Table columns={columns} dataSource={tokens} pagination={false} />
     </div>

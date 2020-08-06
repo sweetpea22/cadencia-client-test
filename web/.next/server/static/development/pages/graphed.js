@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -185,14 +185,16 @@ function BalancerList() {
     context: {
       clientName: "balancer"
     }
-  }); // const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
-  // const loadMorePosts = () => {
-  //   fetchMore({
-  //     variables: {
-  //       skip: pools.length,
-  //     },
-  //   });
-  // };
+  });
+  const loadingMorePosts = networkStatus === _apollo_client__WEBPACK_IMPORTED_MODULE_1__["NetworkStatus"].fetchMore;
+
+  const loadMorePosts = () => {
+    fetchMore({
+      variables: {
+        skip: pools.length
+      }
+    });
+  };
 
   if (error) return __jsx("p", {
     __self: this,
@@ -275,14 +277,40 @@ function BalancerList() {
       lineNumber: 92,
       columnNumber: 7
     }
-  }, "What the biggest Balancer Pools are holding"), __jsx(_antd__WEBPACK_IMPORTED_MODULE_2__["Table"], {
+  }, "What the biggest Balancer Pools are holding"), __jsx("p", {
+    style: {
+      color: "darkgray",
+      fontSize: "11.2px",
+      marginTop: "-1rem"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93,
+      columnNumber: 7
+    }
+  }, "Pulled from:", " ", __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95,
+      columnNumber: 9
+    }
+  }, "https://thegraph.com/explorer/subgraph/balancer-labs/balancer "), __jsx("em", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 96,
+      columnNumber: 9
+    }
+  }, "a few seconds ago")), __jsx(_antd__WEBPACK_IMPORTED_MODULE_2__["Table"], {
     columns: columns,
     dataSource: tokens,
     pagination: false,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 99,
       columnNumber: 7
     }
   }));
@@ -486,13 +514,14 @@ const Navbar = ({
       columnNumber: 11
     }
   }, __jsx("a", {
+    disabled: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24,
       columnNumber: 13
     }
-  }, "Search on Filecoin")), __jsx("span", {
+  }, "Search on Filecoin - Soon!")), __jsx("span", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.divider,
     __self: undefined,
     __source: {
@@ -515,7 +544,7 @@ const Navbar = ({
       lineNumber: 29,
       columnNumber: 13
     }
-  }, "Filecoin Data Network Stats")), __jsx("span", {
+  }, "Filecoin Data Network Stats - Alpha")), __jsx("span", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.divider,
     __self: undefined,
     __source: {
@@ -738,13 +767,39 @@ function UniswapList() {
       lineNumber: 53,
       columnNumber: 9
     }
-  }, "Most Swapped Tokens on Uniswap (TxCount)"), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["BarChart"], {
+  }, "Most Swapped Tokens on Uniswap (TxCount)"), __jsx("p", {
+    style: {
+      color: "darkgray",
+      fontSize: "11.2px",
+      marginTop: "-1rem"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 9
+    }
+  }, "Pulled from:", " ", __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 11
+    }
+  }, "https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2 "), __jsx("em", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 11
+    }
+  }, "a few seconds ago")), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["BarChart"], {
     instanceId: "uniswapChart",
     width: 900,
     height: 600,
     data: tokens,
     margin: {
-      top: 5,
+      top: 10,
       right: 30,
       left: 50,
       bottom: 50
@@ -752,7 +807,7 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["CartesianGrid"], {
@@ -760,14 +815,14 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 75,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["Tooltip"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 76,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["Bar"], {
@@ -777,7 +832,7 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 78,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["XAxis"], {
@@ -786,7 +841,7 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 79,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["Label"], {
@@ -794,7 +849,7 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 80,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["YAxis"], {
@@ -809,7 +864,7 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 81,
       columnNumber: 11
     }
   }))));
@@ -2941,7 +2996,7 @@ async function getStaticProps() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/graphed.js ***!
   \********************************/
