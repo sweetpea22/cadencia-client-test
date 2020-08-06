@@ -12,6 +12,10 @@ export const Navbar = ({ onFilecoinPage }) => {
     <>
       <nav className={styles.navWrapper}>
         <div className={styles.linkWrapper}>
+          <img
+            className={styles.brand}
+            src="https://whatever12-team-bucket.storage.fleek.co/cadencia.png"
+          ></img>
           <Link href="/compare">
             <a>Browse Datasets</a>
           </Link>

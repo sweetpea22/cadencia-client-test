@@ -22,4 +22,10 @@
 .brand {
   max-width: 250px;
   height: 120px;
+  margin-top: -2.5rem;
+  margin-left: -2rem;
+}
+
+.navWrapper {
+  background: #ededed;
 }

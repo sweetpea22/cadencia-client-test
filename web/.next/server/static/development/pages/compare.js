@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -395,31 +395,17 @@ const Navbar = ({
       lineNumber: 14,
       columnNumber: 9
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/compare",
+  }, __jsx("img", {
+    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.brand,
+    src: "https://whatever12-team-bucket.storage.fleek.co/cadencia.png",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15,
       columnNumber: 11
     }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 13
-    }
-  }, "Browse Datasets")), __jsx("span", {
-    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.divider,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 11
-    }
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/filecoin-dashboard",
+    href: "/compare",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -433,7 +419,7 @@ const Navbar = ({
       lineNumber: 20,
       columnNumber: 13
     }
-  }, "Search on Filecoin")), __jsx("span", {
+  }, "Browse Datasets")), __jsx("span", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.divider,
     __self: undefined,
     __source: {
@@ -446,14 +432,37 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 23,
       columnNumber: 11
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 24,
+      columnNumber: 13
+    }
+  }, "Search on Filecoin")), __jsx("span", {
+    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.divider,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 11
+    }
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/filecoin-dashboard",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 11
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
       columnNumber: 13
     }
   }, "Filecoin Data Network Stats")), __jsx("span", {
@@ -461,7 +470,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 31,
       columnNumber: 11
     }
   }), onFilecoinPage ? __jsx("div", {
@@ -469,7 +478,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 34,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -478,7 +487,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 35,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -486,14 +495,14 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 36,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 37,
       columnNumber: 19
     }
   }, "Network Stats"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -502,7 +511,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 40,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -510,14 +519,14 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 41,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 42,
       columnNumber: 19
     }
   }, "Map View")))) : null, !onFilecoinPage ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
@@ -527,7 +536,7 @@ const Navbar = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 52,
         columnNumber: 23
       }
     }),
@@ -538,7 +547,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 49,
       columnNumber: 15
     }
   }), __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
@@ -552,7 +561,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 55,
       columnNumber: 15
     }
   })) : null)));
@@ -575,7 +584,8 @@ module.exports = {
 	"avatar": "Navbar_avatar__34Qe3",
 	"title": "Navbar_title__13EI4",
 	"fcButtonWrapper": "Navbar_fcButtonWrapper__12zPZ",
-	"brand": "Navbar_brand__3LTNI"
+	"brand": "Navbar_brand__3LTNI",
+	"navWrapper": "Navbar_navWrapper__346pw"
 };
 
 /***/ }),
@@ -2865,7 +2875,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/compare.js ***!
   \********************************/

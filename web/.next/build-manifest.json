@@ -24,10 +24,6 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/filecoin-dashboard": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/graphed": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
