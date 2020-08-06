@@ -89,7 +89,7 @@ export default function BalancerList() {
 
   return (
     <div style={{ marginTop: "2.9rem", marginLeft: "4.5rem" }}>
-      <h1>What the biggest Balancer Pools are holding</h1>
+      <h1>Most Swapped Tokens In Largest Balancer Pools</h1>
       <p style={{ color: "darkgray", fontSize: "11.2px", marginTop: "-1rem" }}>
         Pulled from:{" "}
         <a>https://thegraph.com/explorer/subgraph/balancer-labs/balancer </a>
