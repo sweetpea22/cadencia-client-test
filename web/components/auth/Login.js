@@ -3,6 +3,8 @@ import { Button } from "../antd";
 import InputField from "./InputField";
 import * as Yup from "yup";
 import styles from "./auth.module.css";
+
+import Link from "next/link";
 export const LoginForm = (props) => {
   const {
     value = "",
@@ -48,7 +50,9 @@ export const LoginForm = (props) => {
               type="submit"
               disabled={isSubmitting}
             >
-              Login
+              <Link href="/compare">
+                <a>Login</a>
+              </Link>
             </Button>
           </form>
         </Formik>

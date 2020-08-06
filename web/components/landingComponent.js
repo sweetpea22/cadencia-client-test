@@ -34,7 +34,7 @@ export const Landing = () => {
               simple interface to search for, compare and upload data.
             </p>
             <Button type="default">
-              <Link href="/compare">
+              <Link href="/login">
                 <a>Try it out</a>
               </Link>
             </Button>
