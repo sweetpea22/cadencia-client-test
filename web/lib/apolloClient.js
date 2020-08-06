@@ -17,7 +17,7 @@ const uniswap = new HttpLink({
 });
 
 const kyber = new HttpLink({
-  uri: "https://api.thegraph.com/subgraphs/name/protofire/kyber",
+  uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
   credentials: "include",
   fetch,
 });
@@ -33,7 +33,7 @@ function createApolloClient() {
     ssrMode: typeof window === "undefined",
 
     link: ApolloLink.split(
-      (operation) => operation.getContext().dataSrc === "kyber",
+      (operation) => operation.getContext().dataSrc === "balancer",
       kyber,
       uniswap
     ),

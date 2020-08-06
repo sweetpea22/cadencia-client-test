@@ -28,7 +28,7 @@ var uniswap = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
   fetch: node_fetch__WEBPACK_IMPORTED_MODULE_3___default.a
 });
 var kyber = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
-  uri: "https://api.thegraph.com/subgraphs/name/protofire/kyber",
+  uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
   credentials: "include",
   fetch: node_fetch__WEBPACK_IMPORTED_MODULE_3___default.a
 }); // // Compound
@@ -41,7 +41,7 @@ function createApolloClient() {
   return new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloClient"]({
     ssrMode: false,
     link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(function (operation) {
-      return operation.getContext().dataSrc === "kyber";
+      return operation.getContext().dataSrc === "balancer";
     }, kyber, uniswap),
     // link: new HttpLink({
     //   uri: "http://localhost:4000/graphql",

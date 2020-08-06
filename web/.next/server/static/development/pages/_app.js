@@ -123,7 +123,7 @@ const uniswap = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
   fetch: (node_fetch__WEBPACK_IMPORTED_MODULE_3___default())
 });
 const kyber = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
-  uri: "https://api.thegraph.com/subgraphs/name/protofire/kyber",
+  uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
   credentials: "include",
   fetch: (node_fetch__WEBPACK_IMPORTED_MODULE_3___default())
 }); // // Compound
@@ -135,7 +135,7 @@ const kyber = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
 function createApolloClient() {
   return new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloClient"]({
     ssrMode: true,
-    link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(operation => operation.getContext().dataSrc === "kyber", kyber, uniswap),
+    link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(operation => operation.getContext().dataSrc === "balancer", kyber, uniswap),
     // link: new HttpLink({
     //   uri: "http://localhost:4000/graphql",
     //   credentials: "include",

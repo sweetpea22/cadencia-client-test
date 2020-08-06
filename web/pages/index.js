@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import UniswapList, {
   UNISWAP_QUERY,
   uniswapQueryVars,
@@ -7,15 +8,29 @@ import BalancerList, {
   BALANCER_QUERY,
   balancerQueryVars,
 } from "../components/balancer";
+import Layout from "../components/partials/Layout";
+import Navbar from "../components/partials/Navbar";
+
+const BalancerComponentWithNoSSR = dynamic(
+  () => import("../components/balancer"),
+  { ssr: false }
+);
+
+const UniswapComponentWithNoSSR = dynamic(
+  () => import("../components/uniswap"),
+  { ssr: false }
+);
 
 const IndexPage = () => (
-  <div>
-    <h1>Total Trade Volume</h1>
-    <div style={{ display: "flex" }}>
-      <UniswapList />
-      <BalancerList />
+  <>
+    <Navbar />
+    <div>
+      <div style={{ display: "flex" }}>
+        <UniswapComponentWithNoSSR />
+        <BalancerComponentWithNoSSR />
+      </div>
     </div>
-  </div>
+  </>
 );
 
 export async function getStaticProps() {
