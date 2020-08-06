@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -115,6 +115,22 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 
 /***/ }),
 
+/***/ "./components/antd/index.js":
+/*!**********************************!*\
+  !*** ./components/antd/index.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in antd__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return antd__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
 /***/ "./components/balancer.js":
 /*!********************************!*\
   !*** ./components/balancer.js ***!
@@ -131,8 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @apollo/client */ "@apollo/client");
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_apollo_client__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! recharts */ "recharts");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./antd */ "./components/antd/index.js");
 var _jsxFileName = "/Users/studiopreza/Desktop/cadencia/cadencia/web/components/balancer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -147,7 +162,6 @@ const BALANCER_QUERY = _apollo_client__WEBPACK_IMPORTED_MODULE_1__["gql"]`
         id
         name
         symbol
-        balance
       }
     }
   }
@@ -169,24 +183,22 @@ function BalancerList() {
     // more data
     notifyOnNetworkStatusChange: true,
     context: {
-      dataSrc: "balancer"
+      clientName: "balancer"
     }
-  });
-  const loadingMorePosts = networkStatus === _apollo_client__WEBPACK_IMPORTED_MODULE_1__["NetworkStatus"].fetchMore;
-
-  const loadMorePosts = () => {
-    fetchMore({
-      variables: {
-        skip: pools.length
-      }
-    });
-  };
+  }); // const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
+  // const loadMorePosts = () => {
+  //   fetchMore({
+  //     variables: {
+  //       skip: pools.length,
+  //     },
+  //   });
+  // };
 
   if (error) return __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 45,
       columnNumber: 21
     }
   }, " Error");
@@ -194,90 +206,87 @@ function BalancerList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 46,
       columnNumber: 44
     }
   }, "Loading");
   const {
     pools
   } = data;
-  let poolsList = pools.map((pool, index) => {
+  const tokens = pools.map(pool => {
     let tokens = pool.tokens;
-    return __jsx("div", {
-      key: index,
+    tokens.map(token => {
+      return token.name;
+    });
+    return {
+      pool: pool.id,
+      tokens: pool.tokens
+    };
+  });
+  const columns = [{
+    title: "Pool Id",
+    dataIndex: "pool",
+    render: pool => __jsx("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61,
-        columnNumber: 7
-      }
-    }, __jsx("h1", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 63,
         columnNumber: 9
       }
-    }, "Pool ", index), tokens.map(token => __jsx("p", {
-      key: token.id,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64,
-        columnNumber: 11
+    }, pool.substring(0, 7), "...", pool.substring(37, 42))
+  }, {
+    title: "Holdings",
+    dataIndex: "tokens",
+    render: tokens => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, tokens.map((t, index) => {
+      let colors = ["volcano", "geekblue", "cyan", "purple", "magenta"];
+      let color = colors[index];
+
+      if (t.symbol === "WETH") {
+        color = "gold";
       }
-    }, token.name)));
-  }); // const renderAreaChart = (
-  //   <AreaChart width={850} height={600} data={pools}>
-  //     <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-  //     <YAxis domain={["10000000", "dataMax"]} dataKey="poolsCount" />
-  //     <XAxis domain={["dataMin", "dataMax"]} />
-  //     <Area
-  //       type="monotone"
-  //       dataKey="poolsCount"
-  //       stroke="#9A00D7"
-  //       fill="#CF86FA"
-  //       strokeWidth={2}
-  //     />
-  //     <Tooltip />
-  //   </AreaChart>
-  // );
 
-  const renderTreemap = __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["Treemap"], {
-    width: 400,
-    height: 400,
-    data: pools,
-    dataKey: "Token",
-    ratio: 4 / 3,
-    stroke: "#fff",
-    fill: "#8884d8",
+      return __jsx(_antd__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+        color: color,
+        key: t.id,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80,
+          columnNumber: 15
+        }
+      }, t.symbol);
+    }))
+  }];
+  return __jsx("div", {
+    style: {
+      marginTop: "2.9rem",
+      marginLeft: "4.5rem"
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 5
-    }
-  });
-
-  return __jsx("section", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 91,
       columnNumber: 5
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 92,
       columnNumber: 7
     }
-  }, "What the biggest Balancer Pools are holding"), __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, poolsList));
-} // <li key={index}>
-//   Token Name: <strong>{token.name}</strong> Total Trade Volume:{" "}
-//   {token.totalTradeVolume}
-// </li>;
+  }, "What the biggest Balancer Pools are holding"), __jsx(_antd__WEBPACK_IMPORTED_MODULE_2__["Table"], {
+    columns: columns,
+    dataSource: tokens,
+    pagination: false,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94,
+      columnNumber: 7
+    }
+  }));
+}
 
 /***/ }),
 
@@ -505,41 +514,12 @@ const Navbar = ({
       lineNumber: 27,
       columnNumber: 11
     }
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.avatar,
-    size: "large",
-    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["UserOutlined"], {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32,
-        columnNumber: 19
-      }
-    }),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 11
-    }
-  }), __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
-    style: {
-      marginTop: ".7rem",
-      marginLeft: ".3rem",
-      color: "darkgray"
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34,
-      columnNumber: 11
-    }
   }), onFilecoinPage ? __jsx("div", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.fcButtonWrapper,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 30,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -548,7 +528,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 31,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -556,14 +536,14 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 32,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 33,
       columnNumber: 19
     }
   }, "Network Stats"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -572,7 +552,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 36,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -580,17 +560,52 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 37,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 38,
       columnNumber: 19
     }
-  }, "Map View")))) : null)));
+  }, "Map View")))) : null, !onFilecoinPage ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.avatar,
+    size: "large",
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["UserOutlined"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48,
+        columnNumber: 23
+      }
+    }),
+    style: {
+      position: "absolute",
+      right: "5%"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 15
+    }
+  }), __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
+    style: {
+      marginTop: ".7rem",
+      marginLeft: ".3rem",
+      color: "darkgray",
+      position: "absolute",
+      right: "3.5%"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 15
+    }
+  })) : null)));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
 
@@ -648,7 +663,6 @@ const UNISWAP_QUERY = _apollo_client__WEBPACK_IMPORTED_MODULE_1__["gql"]`
     ) {
       id
       symbol
-      name
       txCount
       tradeVolumeUSD
     }
@@ -674,21 +688,11 @@ function UniswapList() {
       clientName: "uniswap"
     }
   });
-  const loadingMorePosts = networkStatus === _apollo_client__WEBPACK_IMPORTED_MODULE_1__["NetworkStatus"].fetchMore;
-
-  const loadMorePosts = () => {
-    fetchMore({
-      variables: {
-        skip: tokens.length
-      }
-    });
-  };
-
   if (error) return __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 45,
       columnNumber: 21
     }
   }, " Error");
@@ -696,24 +700,22 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 46,
       columnNumber: 44
     }
   }, "Loading");
   const {
     tokens
   } = data;
-  let keys = [];
-  tokens.map((t, i) => keys.push(parseInt(t.tradeVolume)));
-  console.log(keys);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     style: {
-      marginTop: "2rem"
+      marginTop: "2rem",
+      marginLeft: "5rem"
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 52,
       columnNumber: 7
     }
   }, __jsx("h1", {
@@ -723,10 +725,10 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 53,
       columnNumber: 9
     }
-  }, "Top Swapped Tokens (TxCount)"), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["BarChart"], {
+  }, "Most Swapped Tokens on Uniswap (TxCount)"), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["BarChart"], {
     instanceId: "uniswapChart",
     width: 900,
     height: 600,
@@ -734,13 +736,13 @@ function UniswapList() {
     margin: {
       top: 5,
       right: 30,
-      left: 80,
-      bottom: 5
+      left: 50,
+      bottom: 50
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 54,
       columnNumber: 9
     }
   }, __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["CartesianGrid"], {
@@ -748,14 +750,14 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 66,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["Tooltip"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 67,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["Bar"], {
@@ -765,24 +767,39 @@ function UniswapList() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 69,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["XAxis"], {
-    dataKey: "name",
+    dataKey: "symbol",
+    position: "insideBottom",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 70,
+      columnNumber: 11
+    }
+  }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+    value: "token symbol",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
       columnNumber: 11
     }
   }), __jsx(recharts__WEBPACK_IMPORTED_MODULE_2__["YAxis"], {
     domain: [0, 2400000],
     dataKey: "txCount",
+    label: {
+      value: "# all-time swaps",
+      angle: -90,
+      position: "left",
+      offset: 40
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 72,
       columnNumber: 11
     }
   }))));
@@ -819,7 +836,7 @@ const uniswap = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
   credentials: "include",
   fetch: (node_fetch__WEBPACK_IMPORTED_MODULE_3___default())
 });
-const kyber = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
+const balancer = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
   uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
   credentials: "include",
   fetch: (node_fetch__WEBPACK_IMPORTED_MODULE_3___default())
@@ -832,7 +849,7 @@ const kyber = new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["HttpLink"]({
 function createApolloClient() {
   return new _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloClient"]({
     ssrMode: true,
-    link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(operation => operation.getContext().dataSrc === "balancer", kyber, uniswap),
+    link: _apollo_client__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].split(operation => operation.getContext().dataSrc === "balancer", balancer, uniswap),
     // link: new HttpLink({
     //   uri: "http://localhost:4000/graphql",
     //   credentials: "include",
@@ -2914,7 +2931,7 @@ async function getStaticProps() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/graphed.js ***!
   \********************************/

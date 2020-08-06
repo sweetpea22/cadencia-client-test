@@ -26,18 +26,6 @@ export const Navbar = ({ onFilecoinPage }) => {
           </Link>
           <span className={styles.divider}></span>
 
-          <Avatar
-            className={styles.avatar}
-            size="large"
-            icon={<UserOutlined />}
-          />
-          <DownOutlined
-            style={{
-              marginTop: ".7rem",
-              marginLeft: ".3rem",
-              color: "darkgray",
-            }}
-          />
           {onFilecoinPage ? (
             <div className={styles.fcButtonWrapper}>
               <Button disabled={onMapPage ? false : true} key="3">
@@ -51,6 +39,25 @@ export const Navbar = ({ onFilecoinPage }) => {
                 </Link>
               </Button>
             </div>
+          ) : null}
+          {!onFilecoinPage ? (
+            <>
+              <Avatar
+                className={styles.avatar}
+                size="large"
+                icon={<UserOutlined />}
+                style={{ position: "absolute", right: "5%" }}
+              ></Avatar>
+              <DownOutlined
+                style={{
+                  marginTop: ".7rem",
+                  marginLeft: ".3rem",
+                  color: "darkgray",
+                  position: "absolute",
+                  right: "3.5%",
+                }}
+              />
+            </>
           ) : null}
         </div>
       </nav>

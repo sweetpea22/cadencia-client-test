@@ -1,5 +1,4 @@
-import { Table } from "../antd";
-import { Menu, Dropdown, Input } from "../antd";
+import { Menu, Dropdown, Input, Table } from "../antd";
 import { DownOutlined } from "@ant-design/icons";
 import styles from "./StoragePowerTable.module.css";
 

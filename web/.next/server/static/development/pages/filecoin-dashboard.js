@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -292,7 +292,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 const StoragePowerTable = props => {
   const storagePowerData = props;
   const {
@@ -303,14 +302,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 11,
       columnNumber: 5
     }
   }, __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 12,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -320,14 +319,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 13,
       columnNumber: 9
     }
   }, "Africa")), __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 21,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -337,14 +336,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 22,
       columnNumber: 9
     }
   }, "Asia")), __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 30,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -354,14 +353,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, "Europe")), __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -371,14 +370,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 40,
       columnNumber: 9
     }
   }, "North America")), __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 48,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -388,14 +387,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, "Oceania")), __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 57,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -405,7 +404,7 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 58,
       columnNumber: 9
     }
   }, "South America")));
@@ -459,7 +458,7 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 129,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -467,14 +466,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 130,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 131,
       columnNumber: 11
     }
   }, "Storage Power in", " ", __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Dropdown"], {
@@ -482,7 +481,7 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 133,
       columnNumber: 13
     }
   }, __jsx("a", {
@@ -491,14 +490,14 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 134,
       columnNumber: 15
     }
   }, "North America ", __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139,
+      lineNumber: 138,
       columnNumber: 31
     }
   })))), __jsx("div", {
@@ -506,21 +505,21 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 142,
       columnNumber: 11
     }
   }, __jsx("h5", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 143,
       columnNumber: 13
     }
   }, "Share of Network: ", __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 144,
       columnNumber: 33
     }
   }, "17%")))), __jsx(_antd__WEBPACK_IMPORTED_MODULE_1__["Table"], {
@@ -533,7 +532,7 @@ const StoragePowerTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150,
+      lineNumber: 149,
       columnNumber: 9
     }
   })));
@@ -1110,41 +1109,12 @@ const Navbar = ({
       lineNumber: 27,
       columnNumber: 11
     }
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.avatar,
-    size: "large",
-    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["UserOutlined"], {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32,
-        columnNumber: 19
-      }
-    }),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 11
-    }
-  }), __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
-    style: {
-      marginTop: ".7rem",
-      marginLeft: ".3rem",
-      color: "darkgray"
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34,
-      columnNumber: 11
-    }
   }), onFilecoinPage ? __jsx("div", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.fcButtonWrapper,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 30,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -1153,7 +1123,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 31,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1161,14 +1131,14 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 32,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 33,
       columnNumber: 19
     }
   }, "Network Stats"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -1177,7 +1147,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 36,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1185,17 +1155,52 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 37,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 38,
       columnNumber: 19
     }
-  }, "Map View")))) : null)));
+  }, "Map View")))) : null, !onFilecoinPage ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.avatar,
+    size: "large",
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["UserOutlined"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48,
+        columnNumber: 23
+      }
+    }),
+    style: {
+      position: "absolute",
+      right: "5%"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 15
+    }
+  }), __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
+    style: {
+      marginTop: ".7rem",
+      marginLeft: ".3rem",
+      color: "darkgray",
+      position: "absolute",
+      right: "3.5%"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 15
+    }
+  })) : null)));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
 
@@ -3287,7 +3292,7 @@ const Dashboard = props => {
 
 /***/ }),
 
-/***/ 8:
+/***/ 3:
 /*!*******************************************!*\
   !*** multi ./pages/filecoin-dashboard.js ***!
   \*******************************************/

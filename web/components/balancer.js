@@ -1,13 +1,5 @@
 import { gql, useQuery, NetworkStatus } from "@apollo/client";
-import {
-  AreaChart,
-  Area,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Treemap,
-} from "recharts";
+import { Table, Tag } from "./antd";
 
 export const BALANCER_QUERY = gql`
   query {
@@ -18,7 +10,6 @@ export const BALANCER_QUERY = gql`
         id
         name
         symbol
-        balance
       }
     }
   }
@@ -37,73 +28,70 @@ export default function BalancerList() {
       // the "networkStatus" changes, so we are able to know if it is fetching
       // more data
       notifyOnNetworkStatusChange: true,
-      context: { dataSrc: "balancer" },
+      context: { clientName: "balancer" },
     }
   );
 
-  const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
+  // const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
 
-  const loadMorePosts = () => {
-    fetchMore({
-      variables: {
-        skip: pools.length,
-      },
-    });
-  };
+  // const loadMorePosts = () => {
+  //   fetchMore({
+  //     variables: {
+  //       skip: pools.length,
+  //     },
+  //   });
+  // };
 
   if (error) return <p> Error</p>;
   if (loading && !loadingMorePosts) return <div>Loading</div>;
 
   const { pools } = data;
-  let poolsList = pools.map((pool, index) => {
+
+  const tokens = pools.map((pool) => {
     let tokens = pool.tokens;
-    return (
-      <div key={index}>
-        <h1>Pool {index}</h1>
-        {tokens.map((token) => (
-          <p key={token.id}>{token.name}</p>
-        ))}
-      </div>
-    );
+    tokens.map((token) => {
+      return token.name;
+    });
+    return { pool: pool.id, tokens: pool.tokens };
   });
 
-  // const renderAreaChart = (
-  //   <AreaChart width={850} height={600} data={pools}>
-  //     <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-  //     <YAxis domain={["10000000", "dataMax"]} dataKey="poolsCount" />
-  //     <XAxis domain={["dataMin", "dataMax"]} />
-  //     <Area
-  //       type="monotone"
-  //       dataKey="poolsCount"
-  //       stroke="#9A00D7"
-  //       fill="#CF86FA"
-  //       strokeWidth={2}
-  //     />
-  //     <Tooltip />
-  //   </AreaChart>
-  // );
-
-  const renderTreemap = (
-    <Treemap
-      width={400}
-      height={400}
-      data={pools}
-      dataKey="Token"
-      ratio={4 / 3}
-      stroke="#fff"
-      fill="#8884d8"
-    />
-  );
+  const columns = [
+    {
+      title: "Pool Id",
+      dataIndex: "pool",
+      render: (pool) => (
+        <p>
+          {pool.substring(0, 7)}...{pool.substring(37, 42)}
+        </p>
+      ),
+    },
+    {
+      title: "Holdings",
+      dataIndex: "tokens",
+      render: (tokens) => (
+        <>
+          {tokens.map((t, index) => {
+            let colors = ["volcano", "geekblue", "cyan", "purple", "magenta"];
+            let color = colors[index];
+            if (t.symbol === "WETH") {
+              color = "gold";
+            }
+            return (
+              <Tag color={color} key={t.id}>
+                {t.symbol}
+              </Tag>
+            );
+          })}
+        </>
+      ),
+    },
+  ];
 
   return (
-    <section>
+    <div style={{ marginTop: "2.9rem", marginLeft: "4.5rem" }}>
       <h1>What the biggest Balancer Pools are holding</h1>
-      <>{poolsList}</>
-    </section>
+
+      <Table columns={columns} dataSource={tokens} pagination={false} />
+    </div>
   );
 }
-
-// <li key={index}>
-//   Token Name: <strong>{token.name}</strong> Total Trade Volume:{" "}
-//   {token.totalTradeVolume}
-// </li>;

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -464,41 +464,12 @@ const Navbar = ({
       lineNumber: 27,
       columnNumber: 11
     }
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.avatar,
-    size: "large",
-    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["UserOutlined"], {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32,
-        columnNumber: 19
-      }
-    }),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 11
-    }
-  }), __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
-    style: {
-      marginTop: ".7rem",
-      marginLeft: ".3rem",
-      color: "darkgray"
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34,
-      columnNumber: 11
-    }
   }), onFilecoinPage ? __jsx("div", {
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.fcButtonWrapper,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 30,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -507,7 +478,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 31,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -515,14 +486,14 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 32,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 33,
       columnNumber: 19
     }
   }, "Network Stats"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -531,7 +502,7 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 36,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -539,17 +510,52 @@ const Navbar = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 37,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 38,
       columnNumber: 19
     }
-  }, "Map View")))) : null)));
+  }, "Map View")))) : null, !onFilecoinPage ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.avatar,
+    size: "large",
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["UserOutlined"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48,
+        columnNumber: 23
+      }
+    }),
+    style: {
+      position: "absolute",
+      right: "5%"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 15
+    }
+  }), __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["DownOutlined"], {
+    style: {
+      marginTop: ".7rem",
+      marginLeft: ".3rem",
+      color: "darkgray",
+      position: "absolute",
+      right: "3.5%"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 15
+    }
+  })) : null)));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
 
@@ -2614,7 +2620,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 17
     }
   }, "Compare"))))), __jsx(_components_defiDashboard_Heading__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Total Swap Volume",
+    title: "Most Swapped Tokens",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -2654,8 +2660,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 13
     }
   })), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/kyber.png",
-    handleClick: () => addToBundle("kyber"),
+    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png",
+    handleClick: () => addToBundle("balancer"),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -2691,7 +2697,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 13
     }
   }))), __jsx(_components_defiDashboard_Heading__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Total Debt Volume",
+    title: "Most Active Liquidity Pools",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -2747,7 +2753,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 11
     }
   }), __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/futureswap.svg",
+    imgSrc: "https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png",
+    handleClick: () => addToBundle("balancer"),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -2759,7 +2766,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 80,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -2770,7 +2777,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
@@ -2782,7 +2789,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 82,
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2790,7 +2797,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 87,
       columnNumber: 13
     }
   })), __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
@@ -2802,7 +2809,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 89,
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2810,7 +2817,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 94,
       columnNumber: 13
     }
   })), __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
@@ -2822,7 +2829,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 96,
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2830,7 +2837,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 101,
       columnNumber: 13
     }
   })), __jsx(_components_antd__WEBPACK_IMPORTED_MODULE_5__["Badge"].Ribbon, {
@@ -2842,7 +2849,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 104,
       columnNumber: 11
     }
   }, __jsx(_components_defiDashboard_DefiTile__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2850,7 +2857,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 109,
       columnNumber: 13
     }
   })))));
@@ -2858,7 +2865,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/compare.js ***!
   \********************************/

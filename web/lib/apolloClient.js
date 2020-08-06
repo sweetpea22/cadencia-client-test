@@ -16,7 +16,7 @@ const uniswap = new HttpLink({
   fetch,
 });
 
-const kyber = new HttpLink({
+const balancer = new HttpLink({
   uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
   credentials: "include",
   fetch,
@@ -34,7 +34,7 @@ function createApolloClient() {
 
     link: ApolloLink.split(
       (operation) => operation.getContext().dataSrc === "balancer",
-      kyber,
+      balancer,
       uniswap
     ),
     // link: new HttpLink({

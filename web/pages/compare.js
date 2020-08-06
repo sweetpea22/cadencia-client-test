@@ -32,7 +32,7 @@ export default () => {
           </span>
         </p>
 
-        <Heading title="Total Swap Volume" />
+        <Heading title="Most Swapped Tokens" />
         <div style={{ display: "flex", marginBottom: "2rem" }}>
           <Badge.Ribbon
             text="Verified"
@@ -46,8 +46,8 @@ export default () => {
           </Badge.Ribbon>
 
           <DefiTile
-            imgSrc="https://whatever12-team-bucket.storage.fleek.co/kyber.png"
-            handleClick={() => addToBundle("kyber")}
+            imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
+            handleClick={() => addToBundle("balancer")}
           />
           <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg" />
           <Badge.Ribbon
@@ -58,7 +58,7 @@ export default () => {
             <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/aave.jpg" />
           </Badge.Ribbon>
         </div>
-        <Heading title="Total Debt Volume" />
+        <Heading title="Most Active Liquidity Pools" />
         <div style={{ display: "flex", marginBottom: "2rem" }}>
           <Badge.Ribbon
             text="Verified"
@@ -72,7 +72,10 @@ export default () => {
           </Badge.Ribbon>
           <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/curve.png" />
           <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/bancor.png" />
-          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg" />
+          <DefiTile
+            imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
+            handleClick={() => addToBundle("balancer")}
+          />
         </div>
         <Heading title="Current Liquidity Volume" />
         <div style={{ display: "flex", marginBottom: "2rem" }}>
