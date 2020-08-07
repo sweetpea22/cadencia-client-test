@@ -1,1 +1,0 @@
-{"ast":null,"code":"export * from \"antd\";","map":{"version":3,"sources":["/Users/studiopreza/Desktop/cadencia/cadencia/web/components/antd/index.js"],"names":[],"mappings":"AAAA,cAAc,MAAd","sourcesContent":["export * from \"antd\";\n"]},"metadata":{},"sourceType":"module"}
