@@ -18,7 +18,11 @@ export default () => {
       <Navbar />
       <Layout>
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button>Upload Your Own Dataset</Button>
+          <Button>
+            <Link href="/upload">
+              <a>Upload Your Own Dataset</a>
+            </Link>
+          </Button>
         </div>
         <h4>To compare data, please select at least one organization.</h4>
         <p>
@@ -49,19 +53,13 @@ export default () => {
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
             handleClick={() => addToBundle("balancer")}
           />
-          <DefiTile
-            disabled
-            imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg"
-          />
+          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg" />
           <Badge.Ribbon
             text="Verified"
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile
-              disabled
-              imgSrc="https://whatever12-team-bucket.storage.fleek.co/aave.jpg"
-            />
+            <DefiTile disabled imgSrc="https://whatever12-team-bucket.storage.fleek.co/aave.jpg" />
           </Badge.Ribbon>
         </div>
         <Heading title="Most Active Liquidity Pools" />
@@ -74,13 +72,9 @@ export default () => {
             <DefiTile
               imgSrc="https://whatever12-team-bucket.storage.fleek.co/kyber.png"
               name="kyber"
-              disabled
             />
           </Badge.Ribbon>
-          <DefiTile
-            disabled
-            imgSrc="https://whatever12-team-bucket.storage.fleek.co/curve.png"
-          />
+          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/curve.png" />
           <DefiTile
             disabled
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/bancor.png"
@@ -88,7 +82,6 @@ export default () => {
           <DefiTile
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
             handleClick={() => addToBundle("balancer")}
-            disabled
           />
         </div>
         <Heading title="Current Liquidity Volume" />
@@ -118,10 +111,7 @@ export default () => {
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile
-              disabled
-              imgSrc="https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png"
-            />
+            <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png" />
           </Badge.Ribbon>
 
           <Badge.Ribbon

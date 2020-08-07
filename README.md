@@ -1,21 +1,35 @@
-# Cadencia - Filecoin Insights
+# Cadencia - Open Data Explorer
 
-<br>
+## What is it
 
-Cadencia.crypto is a dashboard that provides insights into the storage capabilities of the Filecoin network. Instead of focusing on performance metrics related to the blockchain, Cadencia sheds light on the network's storage capacity (verified data, non-verified data, committed capacity), miner metrics, and storage power by region. A user can also utilize Cadencia's map view to access miner geo data and also see successful deals visualized as flows across the map.
+❗️This is a hackathon project.
 
-We wanted these metrics to be more accessible so Filecoin users and miners could get a picture of the current state of global storage.
+Cadencia is a tool that makes open data and open APIs more accessible and meaningful to a wider population. We think you don't need to be a graphQL wizard to be able to use the awesome amounts of data on TheGraph, nor do you need to be savvy about CIDs on Filecoin/IPFS to leverage the power of decentralized data storage.
 
-At the moment we are using mock data. The purpose is to establish which stats would be most meaningful to a variety of users. We hope that as the Filecoin ecosystem matures we will have better access to real data and seamlessly stream it on Cadencia.
+Currently, Cadencia is:
 
-<br>
+- An interface that abstracts querying subgraphs. The data is grouped by subject matter, so you can compare the data (mostly DeFi at this point) that you care most about, side-by-side across platforms ✅
+- Filecoin Data Dashboard (awaitng the real-time data!) that provides information about the state of global storage at a glance ✅
+  - Retrieval compared to Storage
+  - Deal making information (average prices, size)
+  - Storage Capacity Stats
+  - Geospatial data
+  - Verified vs Non Verified Data
+  - Filecoin client versioning
 
-Ideas we would like to implement in the future:
+In the near future, we plan to include these features
 
-- retrieval metrics
-- a GUI for miners to monitor contracts, locked FIL, personal storage power, and deal-making settings
-- ability to look up file/replication histories via the content address 
-- verification service for clients
+- Searching by CID (need to figure out how it Filecoin data is going to be indexed)
+- User accounts to save finds, and upload JSON data of your own (Textile Buckets)
+- No-code data visualizer, so you can get insights from aggregated data you've uploaded or found on the explorer
 
-<br>
+## What it's built with
 
+- Nextjs (React SSR)
+- GraphQL
+- TypeGraphQL
+- Nodejs in Typescript
+- Redis and Postgres
+- Powergate
+
+Data is currently aggregated from subgraphs on TheGraph, and soon, Filecoin.
