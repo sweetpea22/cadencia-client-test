@@ -12,7 +12,7 @@ Currently, Cadencia is:
 - Filecoin Data Dashboard (awaitng the real-time data!) that provides information about the state of global storage at a glance ✅
   - Retrieval compared to Storage
   - Deal making information (average prices, size)
-  - Storage Capacity Stats
+  - Storage Capacity Stats ✅
   - Geospatial data
   - Verified vs Non Verified Data
   - Filecoin client versioning
