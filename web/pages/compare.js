@@ -53,13 +53,19 @@ export default () => {
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
             handleClick={() => addToBundle("balancer")}
           />
-          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg" />
+          <DefiTile
+            disabled
+            imgSrc="https://whatever12-team-bucket.storage.fleek.co/futureswap.svg"
+          />
           <Badge.Ribbon
             text="Verified"
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile disabled imgSrc="https://whatever12-team-bucket.storage.fleek.co/aave.jpg" />
+            <DefiTile
+              disabled
+              imgSrc="https://whatever12-team-bucket.storage.fleek.co/aave.jpg"
+            />
           </Badge.Ribbon>
         </div>
         <Heading title="Most Active Liquidity Pools" />
@@ -72,14 +78,19 @@ export default () => {
             <DefiTile
               imgSrc="https://whatever12-team-bucket.storage.fleek.co/kyber.png"
               name="kyber"
+              disabled
             />
           </Badge.Ribbon>
-          <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/curve.png" />
+          <DefiTile
+            disabled
+            imgSrc="https://whatever12-team-bucket.storage.fleek.co/curve.png"
+          />
           <DefiTile
             disabled
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/bancor.png"
           />
           <DefiTile
+            disabled
             imgSrc="https://whatever12-team-bucket.storage.fleek.co/dex%20logos-07.png"
             handleClick={() => addToBundle("balancer")}
           />
@@ -111,7 +122,10 @@ export default () => {
             color="geekblue"
             style={{ marginRight: ".8rem" }}
           >
-            <DefiTile imgSrc="https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png" />
+            <DefiTile
+              disabled
+              imgSrc="https://whatever12-team-bucket.storage.fleek.co/uniswap-03.png"
+            />
           </Badge.Ribbon>
 
           <Badge.Ribbon
